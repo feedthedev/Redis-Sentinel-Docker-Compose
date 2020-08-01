@@ -2,4 +2,4 @@
 
 An example setup for using Redis Sentinel with Docker Compose.
 
-See my blog post for more information and an explanation: https://blog.alexseifert.com/2016/11/14/using-redis-sentinel-with-docker-compose/
+For more information and an explanation, see: https://www.developers-notebook.com/development/using-redis-sentinel-with-docker-compose/
