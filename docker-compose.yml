@@ -20,7 +20,7 @@ services:
     links:
       - redis-master
     volumes:
-      - "./.data:/data"
+      - "./.data-slave:/data"
      
   # Instance 1
   redis-sentinel:
