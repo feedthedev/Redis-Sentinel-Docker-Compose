@@ -8,14 +8,14 @@ services:
       - redis-sentinel
      
   redis-master:
-    image: redis:6-alpine
+    image: redis:7.0.5
     volumes:
       - "./.data:/data"
     ports:
       - "6379:6379"
  
   redis-slave:
-    image: redis:6-alpine
+    image: redis:7.0.5
     command: redis-server --slaveof redis-master 6379
     links:
       - redis-master
