@@ -6,21 +6,30 @@ services:
     image: some-image
     links:
       - redis-sentinel
-     
+
+  redis-ui:
+    image: patrikx3/p3x-redis-ui:latest
+    ports:
+      - 7843:7843
+    depends_on:
+      - redis-master
+    volumes:
+      - ./p3x-redis-ui-settings:/settings
+
   redis-master:
-    image: redis:6-alpine
+    image: redis:7.0.5
     volumes:
       - "./.data:/data"
     ports:
       - "6379:6379"
  
   redis-slave:
-    image: redis:6-alpine
+    image: redis:7.0.5
     command: redis-server --slaveof redis-master 6379
     links:
       - redis-master
     volumes:
-      - "./.data:/data"
+      - "./.data-slave:/data"
      
   # Instance 1
   redis-sentinel:
