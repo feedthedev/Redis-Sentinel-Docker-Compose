@@ -6,7 +6,16 @@ services:
     image: some-image
     links:
       - redis-sentinel
-     
+
+  redis-ui:
+    image: patrikx3/p3x-redis-ui:latest
+    ports:
+      - 7843:7843
+    depends_on:
+      - redis-master
+    volumes:
+      - ./p3x-redis-ui-settings:/settings
+
   redis-master:
     image: redis:7.0.5
     volumes:
