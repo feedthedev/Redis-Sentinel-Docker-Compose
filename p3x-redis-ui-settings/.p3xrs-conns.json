@@ -1,0 +1,12 @@
+{
+    "update": "2022-10-07T14:18:28.315Z",
+    "list": [
+        {
+            "name": "sentinels-setup",
+            "host": "redis-master",
+            "port": 6379,
+            "password": "",
+            "id": "unique"
+        }
+    ]
+}
